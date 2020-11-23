@@ -1,6 +1,5 @@
-# Symbol Explorer
+# LaRed Explorer
 
-[![Build Status](https://travis-ci.com/nemgrouplimited/symbol-explorer.svg?branch=main)](https://travis-ci.com/nemgrouplimited/symbol-explorer)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 Symbol Explorer is a read-only web application to browse the content of the blockchain.
@@ -15,13 +14,13 @@ The explorer supports searching for transactions, accounts, namespaces, mosaics,
 1. Clone the project.
 
 ```
-git clone https://github.com/nemgrouplimited/symbol-explorer.git
+git clone https://github.com/superhow/lared-explorer.git
 ```
 
 2. Install the required dependencies.
 
 ```
-cd symbol-explorer
+cd lared-explorer
 npm install
 ```
 
@@ -68,7 +67,5 @@ Copyright 2019-present NEM
 
 Licensed under the [Apache License 2.0](LICENSE)
 
-[self]: https://github.com/nemgrouplimited/symbol-explorer
+[self]: https://github.com/superhow/lared-explorer
 [docs]: https://nemtech.github.io
-[issues]: https://github.com/nemgrouplimited/symbol-explorer/issues
-[slack]: https://join.slack.com/t/nem2/shared_invite/enQtMzY4MDc2NTg0ODgyLWZmZWRiMjViYTVhZjEzOTA0MzUyMTA1NTA5OWQ0MWUzNTA4NjM5OTJhOGViOTBhNjkxYWVhMWRiZDRkOTE0YmU
