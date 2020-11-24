@@ -1,13 +1,9 @@
 const defaultGlobalConfig = {
 	'peersApi': {
-		'defaultNode': 'http://api-01.eu-central-1.0.10.0.x.symboldev.network:3000',
+		'defaultNode': 'http://20.52.146.76:3000',
 		'nodes': [
-			'http://api-01.ap-northeast-1.0.10.0.x.symboldev.network:3000',
-			'http://api-01.ap-southeast-1.0.10.0.x.symboldev.network:3000',
-			'http://api-01.eu-central-1.0.10.0.x.symboldev.network:3000',
-			'http://api-01.eu-west-1.0.10.0.x.symboldev.network:3000',
-			'http://api-01.us-east-1.0.10.0.x.symboldev.network:3000',
-			'http://api-01.us-west-1.0.10.0.x.symboldev.network:3000'
+			'http://20.52.146.76:3000',
+			'http://51.116.118.178:3000'
 		]
 	},
 	'apiNodePort': 3000,
@@ -16,8 +12,8 @@ const defaultGlobalConfig = {
 		'statisticsService': ''
 	},
 	'networkConfig': {
-		'namespaceName': 'SYMBOL.XEM',
-		'mosaicId': '5B66E76BECAD0860',
+		'namespaceName': 'lared.moneda',
+		'mosaicId': '4131C5FD69F7A75C',
 		'divisibility': '6'
 	},
 	'footer': {
