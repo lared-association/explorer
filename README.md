@@ -12,11 +12,6 @@ The explorer supports searching for transactions, accounts, namespaces, mosaics,
 ## Installation
 
 1. Clone the project.
-
-```
-git clone https://github.com/superhow/lared-explorer.git
-```
-
 2. Install the required dependencies.
 
 ```
