@@ -19,7 +19,7 @@
 				x2="100%"
 				y2="100%"
 			>
-				<stop offset="0%" stop-color="#5200c6" />
+				<stop offset="0%" stop-color="#3d3d3d" />
 				<stop offset="100%" stop-color="#44004e" />
 			</linearGradient>
 		</defs>

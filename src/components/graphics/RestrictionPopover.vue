@@ -93,10 +93,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.item {
+  .item {
     min-width: 250px;
-    background: linear-gradient(120deg, var(--primary) 0%, var(--secondary) 100%);
-
+    background: #0b151c;
     .key {
         color: #fff;
         font-weight: 700;

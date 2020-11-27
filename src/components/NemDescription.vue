@@ -19,21 +19,7 @@
 <template>
 	<b-col sm="12" lg="4">
 		<div class="ft-logo">
-			<a href="https://nem.io/" target="_blank">
-				<img src="../styles/img/logo-f-w.png" />
-			</a>
-		</div>
-		<div class="ft-desc mt-3">
-			<p>
-				Symbol is a platform built on revolutionary blockchain
-				technology, reimagining from scratch the ideal
-				blockchain.
-				Symbol does not only allow for standard peer-to-peer
-				value transfer transactions, but instead does much
-				more – store data, make transactions, prove identity,
-				timestamp documents, and create arbitrary digital
-				assets.
-			</p>
+			<img src="../styles/img/logo-f-w.png" />
 		</div>
 	</b-col>
 </template>
@@ -46,14 +32,10 @@
     font-weight: 200;
 }
 
-.footer .ft-logo a {
-    height: 30px;
+  .footer .ft-logo img {
     display: inline-block;
-}
+    max-width: 35%;
+    max-height: 35%;
+  }
 
-.footer .ft-logo a img {
-    width: auto;
-    max-width: 100%;
-    max-height: 100%;
-}
 </style>

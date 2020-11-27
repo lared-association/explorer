@@ -17,7 +17,7 @@ const defaultGlobalConfig = {
 		'divisibility': '6'
 	},
 	'footer': {
-		'link': [{
+		'link': [/* {
 			'href': 'https://nemflash.io/',
 			'text': 'NEM News',
 			'icon': 'IconNewspaper'
@@ -51,7 +51,7 @@ const defaultGlobalConfig = {
 			'href': 'http://faucet-0.10.0.x-02.symboldev.network/',
 			'text': 'Faucet-02',
 			'icon': 'IconHomeCurrencyUsd'
-		}
+		}*/
 		]
 	}
 };
