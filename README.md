@@ -1,32 +1,87 @@
+
+![](https://vult-my.sharepoint.com/personal/justinas_lekavicius_mif_stud_vu_lt/Documents/lared-logo-animated.gif)
 # LaRed Explorer
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+* 
+LaRed Explorer is a read-only web application to browse the content of the blockchain.
+The explorer supports searching for transactions, accounts, namespaces, tokens, and blocks information on a given network.
+***
+## Features
+### Explore recent block and transaction changes in real time.
 
-Symbol Explorer is a read-only web application to browse the content of the blockchain.
-The explorer supports searching for transactions, accounts, namespaces, mosaics, and blocks information on a given network.
+![](https://vult-my.sharepoint.com/personal/justinas_lekavicius_mif_stud_vu_lt/Documents/explorergif2.gif)
 
+### View statistics such as block time differences, recommended fees multiplier, transaction per block and effective rental fees.
+
+![](https://vult-my.sharepoint.com/personal/justinas_lekavicius_mif_stud_vu_lt/Documents/explorergif1.gif)
+
+* Easily search transactions, addresses, namespaces, tokens and blocks.
+* Browse block, transaction, account, namespace, token and node details.
+
+***
 ## Requirements
 
-- Node.js 8, 9 or 10
+**Node.js 8, 9 or 10** is required to run LaRed Wallet as a web application.
+It is recommended to install **npm**, the Node.js package manager. This can be done by executing the following command:
 
-## Installation
+   ```
+sudo apt install npm
+   ```
+***
+## Building instructions
 
 1. Clone the project.
-2. Install the required dependencies.
 
-```
+
+    ```
+git clone https://github.com/superhow/lared-explorer.git
+    ```
+
+2. Navigate to the project folder.
+
+    ```
 cd lared-explorer
-npm install
-```
+    ```
+	
+3. Install the dependencies. This may take a while.
 
-3. Run the explorer application.
+    ```
+npm install 
+    ```
 
-```
-npm run dev
-```
+4. Start the development server.
 
-4. Visit http://localhost:8080/#/ in your browser.
+    ```
+npm run dev 
+    ```
 
+5. Visit http://localhost:8080/#/ in your browser.
+***
+## Feature status
+### Features currently working
+* Real-time display of recent blocks and transactions ✔️
+* Block information display ✔️
+* Transaction detail display ✔️
+* Account detail display ✔️
+* Namespace detial display ✔️
+* Token detail display ✔️
+* Block, transaction, account, token, namespace search ✔️
+* Statistics display (block time differences, transaction per block etc.) ✔️
+### Features currently not working
+* Nothing to report so far.
+***
+## Main changes
+* Altered UI elements (header, footer, colors, text, icons) for a more appealing, consistent and coherent appearance.
+* Changed some terms to more popular and understandable ones:
+	* Mosaics changed to Tokens
+	* Harvesting changed to Staking
+	* Importance changed to Delegated Proof of Stake
+* Removed some irrelevant UI elements for less intrusive appearance.
+***
+## Known issues
+* No major known issues so far.
+***
 ## Developer notes
 
 ### Architecture
@@ -43,19 +98,7 @@ The file `/src/config/setup.json.mt` contains the node list shown in the node se
 1. Edit `peersApi.nodes` array to set up the custom node list.
 2. Set `peersApi.defaultNode` property to the default node url.
 
-## Getting help
-
-Use the following available resources to get help:
-
-- [Symbol Documentation][docs]
-- Join the community [slack group (#sig-client)][slack]
-- If you found a bug, [open a new issue][issues]
-
-## Contributing
-
-Contributions are welcome and appreciated.
-Check [CONTRIBUTING](CONTRIBUTING.md) for information on how to contribute.
-
+***
 ## License
 
 Copyright 2019-present NEM
