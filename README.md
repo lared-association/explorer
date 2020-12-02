@@ -1,5 +1,5 @@
 
-![](https://vult-my.sharepoint.com/personal/justinas_lekavicius_mif_stud_vu_lt/Documents/lared-logo-animated.gif)
+![](https://i.imgur.com/r8mM1TN.gif)
 # LaRed Explorer
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
@@ -10,11 +10,11 @@ The explorer supports searching for transactions, accounts, namespaces, tokens, 
 ## Features
 ### Explore recent block and transaction changes in real time.
 
-![](https://vult-my.sharepoint.com/personal/justinas_lekavicius_mif_stud_vu_lt/Documents/explorergif2.gif)
+![](https://i.imgur.com/0bKFHAq.gif)
 
 ### View statistics such as block time differences, recommended fees multiplier, transaction per block and effective rental fees.
 
-![](https://vult-my.sharepoint.com/personal/justinas_lekavicius_mif_stud_vu_lt/Documents/explorergif1.gif)
+![](https://i.imgur.com/7koJ07o.gif)
 
 * Easily search transactions, addresses, namespaces, tokens and blocks.
 * Browse block, transaction, account, namespace, token and node details.
