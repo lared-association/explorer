@@ -23,7 +23,7 @@
 		<circle
 			fill-rule="evenodd"
 			clip-rule="evenodd"
-			fill="url(#key-circle-gradient)"
+			fill="#EC2227"
 			cx="19.115"
 			cy="19.094"
 			r="17.26"

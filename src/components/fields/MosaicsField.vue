@@ -22,7 +22,7 @@
 			v-for="(item, index) in value"
 			class="mosaic"
 			:key="'mos_s' + index"
-			:title="'Mosaic: ' + item.mosaicId + ' | Amount: ' + item.amount"
+			:title="'Token: ' + item.mosaicId + ' | Amount: ' + item.amount"
 		>
 			<span class="mosaic-name" @click.stop>
 				<router-link :to="getItemHref('mosaicId', item.mosaicId)">
