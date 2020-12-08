@@ -83,7 +83,7 @@ export const transaction = [
 		}
 	},
 	{
-		label: 'Mosaic',
+		label: 'Token',
 		icon: 'mdi-circle',
 		value: {
 			type: [
@@ -162,7 +162,7 @@ export const namespace = [
 		}
 	},
 	{
-		label: 'Mosaic Alias',
+		label: 'Token Alias',
 		icon: 'mdi-circle',
 		value: {
 			aliasType: AliasType.Mosaic
@@ -198,7 +198,7 @@ export const metadata = [
 		}
 	},
 	{
-		label: 'Mosaic Alias',
+		label: 'Token Alias',
 		icon: 'mdi-circle',
 		value: {
 			metadataType: MetadataType.Mosaic
@@ -215,14 +215,14 @@ export const metadata = [
 
 export const mosaicRestriction = [
 	{
-		label: 'Mosaic Global Restriction',
+		label: 'Token Global Restriction',
 		icon: 'mdi-alert',
 		value: {
 			entryType: MosaicRestrictionEntryType.GLOBAL
 		}
 	},
 	{
-		label: 'Mosaic Address Restriction',
+		label: 'Token Address Restriction',
 		icon: 'mdi-account',
 		value: {
 			entryType: MosaicRestrictionEntryType.ADDRESS

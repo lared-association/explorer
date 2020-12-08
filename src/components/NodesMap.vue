@@ -64,7 +64,7 @@ export default {
 		button1Style() {
 			return `border-radius: 3px; 
                 color: #fff;
-                background-color: #5200c6;
+                background-color: #3d3d3d;
                 font-family: Noto Sans;
                 font-weight: bold;
                 font-size: 13px;
@@ -81,8 +81,8 @@ export default {
 			return `border-radius: 3px;
                 border-width: 2px;
                 border-style: solid;
-                border-color: #5200c6;
-                color: #5200c6;
+                border-color: #3d3d3d;
+                color: #3d3d3d;
                 background-color: #fff;
                 font-family: Noto Sans;
                 font-weight: bold;

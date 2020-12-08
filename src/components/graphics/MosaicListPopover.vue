@@ -30,7 +30,7 @@ export default {
 
 		title: {
 			type: String,
-			default: 'Mosaics'
+			default: 'Tokens'
 		},
 
 		target: {

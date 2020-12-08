@@ -63,11 +63,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.ex-item {
-    border-left: 4px solid #904d9c;
+  .ex-item {
+    border-left: 4px solid #851414;
     padding: 1px 10px;
     margin-bottom: 15px;
-
     .ex-item-title {
         color: rgb(187, 187, 187);
         font-size: 12px;

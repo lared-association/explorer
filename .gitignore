@@ -26,3 +26,4 @@ src/config/setup.json
 
 # e2e screenshots
 e2e/screenshots/*
+/.vs

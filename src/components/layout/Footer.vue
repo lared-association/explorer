@@ -52,12 +52,6 @@
 import NemDescription from '@/components/NemDescription.vue';
 import NemCopyright from '@/components/NemCopyright.vue';
 import NodeSelector from '@/components/controls/NodeSelector.vue';
-
-import IconGithub from 'vue-material-design-icons/GithubCircle.vue';
-import IconNewspaper from 'vue-material-design-icons/Newspaper.vue';
-import IconReddit from 'vue-material-design-icons/Reddit.vue';
-import IconForum from 'vue-material-design-icons/Forum.vue';
-import IconTelegram from 'vue-material-design-icons/Telegram.vue';
 import IconHomeCurrencyUsd from 'vue-material-design-icons/HomeCurrencyUsd.vue';
 import globalConfig from '../../config/globalConfig';
 
@@ -66,12 +60,6 @@ export default {
 		NemDescription,
 		NemCopyright,
 		NodeSelector,
-
-		IconGithub,
-		IconNewspaper,
-		IconReddit,
-		IconForum,
-		IconTelegram,
 		IconHomeCurrencyUsd
 	},
 
@@ -89,12 +77,11 @@ export default {
     width: 100%;
 }
 
-.footer {
-    background: #410078;
+  .footer {
+    background-image: url(../../styles/img/symbol_connector_crop2.jpg);
     padding: 50px 0 0;
     width: 100%;
     position: relative;
-
     .footer-row {
         padding-top: 40px;
         // width: 100%;
@@ -108,7 +95,6 @@ export default {
 
 .footer::before {
     content: '';
-    background-image: url(../../styles/img/symbol_connector_crop2.jpg);
     position: absolute;
     z-index: 0;
     bottom: 0;

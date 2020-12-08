@@ -47,11 +47,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.blue-gradinet {
-    background: linear-gradient(120deg, var(--primary) 0%, var(--secondary) 100%);
+  .blue-gradinet {
+    background-image: url(../../styles/img/symbol_connector_crop2.jpg);
     background-size: 100% auto;
     position: relative;
-}
+  }
 
 .blue-gradinet::before {
     content: '';

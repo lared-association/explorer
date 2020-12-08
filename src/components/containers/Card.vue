@@ -43,15 +43,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.ex-card {
+  .ex-card {
     //padding: 20px;
-    box-shadow: 0 1px 15px 1px #da50da2c;
+    box-shadow: 0 1px 15px 1px #6b06062c;
     background: #fff;
     border-radius: 4px;
     border: none;
     margin-bottom: 20px;
     transition: all 0.5s ease-in-out;
-
     .ex-card-loading {
         height: 187px;
     }

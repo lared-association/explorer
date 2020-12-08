@@ -96,7 +96,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.card-item::before {
+  .card-item::before {
     width: 4px;
     content: '';
     height: 100%;
@@ -104,10 +104,10 @@ export default {
     padding: 0;
     left: 0;
     top: 0;
-    background: #763f80;
+    background: #851414;
     border-top-left-radius: 3px;
     border-bottom-left-radius: 3px;
-}
+  }
 
 .card-item {
     .card-body {

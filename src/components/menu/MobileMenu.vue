@@ -105,11 +105,11 @@ export default {
     z-index: 1999;
 }
 
-.blue-gradinet {
-    background: linear-gradient(120deg, var(--primary) 0%, var(--secondary) 100%);
+  .blue-gradinet {
+    background: #3b4045;
     background-size: 100% auto;
     position: relative;
-}
+  }
 
 .blue-gradinet::before {
     content: '';
@@ -205,15 +205,14 @@ export default {
         }
     }
 
-    .mobile-panel {
-        background: linear-gradient(120deg, var(--primary) 0%, var(--secondary) 100%);
-        box-shadow: 0 2px 10px 2px rgba(0, 0, 0, 0.2);
-        padding: 0 15px;
-        display: flex;
-        z-index: 1000;
-        opacity: 0.9;
-
-        .title {
+  .mobile-panel {
+    background: #0b151c;
+    box-shadow: 0 2px 10px 2px rgba(0, 0, 0, 0.2);
+    padding: 0 15px;
+    display: flex;
+    z-index: 1000;
+    opacity: 0.9;
+    .title {
             color: #fff;
             font-weight: 500;
             text-transform: capitalize;

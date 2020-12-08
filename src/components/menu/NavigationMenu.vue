@@ -71,12 +71,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.ex-menu {
-    background: linear-gradient(120deg, var(--primary) 0%, var(--secondary) 100%);
+  .ex-menu {
+    background: #0b151c;
     border-top: 1px solid rgba(255, 255, 255, 0.5);
     padding: 0 60px;
     position: relative;
-
     .width-limiter {
         display: block;
         width: 100%;

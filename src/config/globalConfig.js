@@ -17,42 +17,7 @@ const defaultGlobalConfig = {
 		'divisibility': '6'
 	},
 	'footer': {
-		'link': [{
-			'href': 'https://nemflash.io/',
-			'text': 'NEM News',
-			'icon': 'IconNewspaper'
-		},
-		{
-			'href': 'https://forum.nem.io/',
-			'text': 'Forum',
-			'icon': 'IconForum'
-		},
-		{
-			'href': 'https://t.me/nemred',
-			'text': 'Telegram',
-			'icon': 'IconTelegram'
-		},
-		{
-			'href': 'https://www.reddit.com/r/nem/',
-			'text': 'Reddit',
-			'icon': 'IconReddit'
-		},
-		{
-			'href': 'https://github.com/nemtech',
-			'text': 'Github',
-			'icon': 'IconGithub'
-		},
-		{
-			'href': 'http://faucet-0.10.0.x-01.symboldev.network/',
-			'text': 'Faucet-01',
-			'icon': 'IconHomeCurrencyUsd'
-		},
-		{
-			'href': 'http://faucet-0.10.0.x-02.symboldev.network/',
-			'text': 'Faucet-02',
-			'icon': 'IconHomeCurrencyUsd'
-		}
-		]
+		'link': []
 	}
 };
 
