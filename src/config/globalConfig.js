@@ -1,9 +1,9 @@
 const defaultGlobalConfig = {
 	'peersApi': {
-		'defaultNode': 'http://20.52.146.76:3000',
+		'defaultNode': 'http://51.116.168.38:3000',
 		'nodes': [
-			'http://20.52.146.76:3000',
-			'http://51.116.118.178:3000'
+			'http://51.116.168.38:3000',
+			'http://51.116.171.30:3000'
 		]
 	},
 	'apiNodePort': 3000,
