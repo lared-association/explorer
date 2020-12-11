@@ -1,5 +1,5 @@
 {
-    "nodeUrl": "http://20.52.146.76:3000",
+    "nodeUrl": "http://51.116.168.38/:3000",
     "marketDataUrl": "https://min-api.cryptocompare.com/",
     "pagination": {
         "pageSize": 25
