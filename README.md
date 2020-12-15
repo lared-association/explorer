@@ -73,10 +73,9 @@ npm run dev
 ***
 ## Main changes
 * Altered UI elements (header, footer, colors, text, icons) for a more appealing, consistent and coherent appearance.
-* Changed some terms to more popular and understandable ones:
+* Changed some terminology:
 	* Mosaics changed to Tokens
 	* Harvesting changed to Staking
-	* Importance changed to Delegated Proof of Stake
 * Removed some irrelevant UI elements for less intrusive appearance.
 ***
 ## Known issues
@@ -92,7 +91,7 @@ npm run dev
 * `/src/views`: Handles the UI of the explorer.
 
 ### How to change the node list
-
+s
 The file `/src/config/setup.json.mt` contains the node list shown in the node selector dropdown.
 
 1. Edit `peersApi.nodes` array to set up the custom node list.
