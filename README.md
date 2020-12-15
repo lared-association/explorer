@@ -73,10 +73,9 @@ npm run dev
 ***
 ## Main changes
 * Altered UI elements (header, footer, colors, text, icons) for a more appealing, consistent and coherent appearance.
-* Changed some terms to more popular and understandable ones:
+* Changed some terminology:
 	* Mosaics changed to Tokens
 	* Harvesting changed to Staking
-	* Importance changed to Delegated Proof of Stake
 * Removed some irrelevant UI elements for less intrusive appearance.
 ***
 ## Known issues
