@@ -91,7 +91,7 @@ npm run dev
 * `/src/views`: Handles the UI of the explorer.
 
 ### How to change the node list
-s
+
 The file `/src/config/setup.json.mt` contains the node list shown in the node selector dropdown.
 
 1. Edit `peersApi.nodes` array to set up the custom node list.
