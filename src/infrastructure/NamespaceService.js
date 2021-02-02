@@ -19,8 +19,8 @@
 import http from './http';
 import helper from '../helper';
 import Constants from '../config/constants';
-import { ChainService, MetadataService, TransactionService } from '../infrastructure';
-import { Order, NamespaceId, UInt64, TransactionType, TransactionGroup } from 'symbol-sdk';
+import { ChainService, MetadataService, TransactionService, ReceiptService } from '../infrastructure';
+import { Order, NamespaceId, UInt64, TransactionType, TransactionGroup, ReceiptType, Address } from 'symbol-sdk';
 
 class NamespaceService {
   /**
@@ -131,12 +131,12 @@ class NamespaceService {
    * @returns customize namespace info Object
    */
   static getNamespaceInfo = async (hexOrNamespace) => {
-  	let namespaceId = await helper.hexOrNamespaceToId(hexOrNamespace, 'namespace');
+  	const namespaceId = await helper.hexOrNamespaceToId(hexOrNamespace, 'namespace');
 
-  	let namespace = await this.getNamespace(namespaceId);
+  	const namespace = await this.getNamespace(namespaceId);
   	const { height: currentHeight } = await ChainService.getChainInfo();
 
-  	let {
+  	const {
   		isExpired,
   		expiredInBlock,
   		expiredInSecond
@@ -144,9 +144,8 @@ class NamespaceService {
 
   	let formattedNamespaceInfo = {
   		...namespace,
-  		owneraddress: namespace.ownerAddress,
   		duration: helper.convertTimeFromNowInSec(expiredInSecond) || Constants.Message.UNLIMITED,
-  		status: namespace.active
+  		status: isExpired ? Constants.Message.EXPIRED : Constants.Message.ACTIVE
   	};
 
   	// create alias props by alias type.
@@ -159,9 +158,12 @@ class NamespaceService {
   	// End height disable click before expired.
   	formattedNamespaceInfo.expiredInBlock = helper.isNativeNamespace(namespace.namespaceName) ? Constants.Message.INFINITY : expiredInBlock + ` ≈ ` + formattedNamespaceInfo.duration;
 
-  	if (!isExpired) {
+  	if (isExpired)
+  		delete formattedNamespaceInfo.expiredInBlock;
+
+  	if (currentHeight < formattedNamespaceInfo.endHeight) {
   		formattedNamespaceInfo.beforeEndHeight = helper.isNativeNamespace(namespace.namespaceName) ? Constants.Message.INFINITY : formattedNamespaceInfo.endHeight + ` ( ${http.networkConfig.NamespaceGraceDuration} blocks of grace period )`;
-  		delete formattedNamespaceInfo.endHeight;
+	  	delete formattedNamespaceInfo.endHeight;
   	}
 
   	return formattedNamespaceInfo;
@@ -205,7 +207,6 @@ class NamespaceService {
 
   			return {
   				...namespace,
-  				owneraddress: namespace.ownerAddress,
   				expirationDuration: helper.isNativeNamespace(namespace.namespaceName) ? Constants.Message.INFINITY : helper.convertTimeFromNowInSec(expiredInSecond),
   				isExpired: isExpired,
   				approximateExpired: helper.isNativeNamespace(namespace.namespaceName) ? Constants.Message.INFINITY : helper.convertSecondToDate(expiredInSecond),
@@ -219,21 +220,90 @@ class NamespaceService {
    * Gets namespace metadata list dataset into Vue component
    * @param pageInfo - object for page info such as pageNumber, pageSize
    * @param filterVaule - object for search criteria
-   * @param namespaceId - namespaceId
+   * @param hexOrNamespace - hex value or namespace name
    * @returns formatted mamespace Metadata list
    */
-  static getNamespaceMetadataList = async (pageInfo, filterVaule, namespaceId) => {
+  static getNamespaceMetadataList = async (pageInfo, filterVaule, hexOrNamespace) => {
+  	const namespaceId = await helper.hexOrNamespaceToId(hexOrNamespace, 'namespace');
+
   	const { pageNumber, pageSize } = pageInfo;
+
   	const searchCriteria = {
 	   pageNumber,
 	   pageSize,
 	   order: Order.Desc,
-	   targetId: new NamespaceId(namespaceId),
+	   targetId: namespaceId,
 	   ...filterVaule
   	};
   	const namespaceMetadatas = await MetadataService.searchMetadatas(searchCriteria);
 
   	return namespaceMetadatas;
+  }
+
+  /**
+   * Gets namespace balance transfer receipt list dataset into Vue component
+   * @param pageInfo - object for page info such as pageNumber, pageSize
+   * @param hexOrNamespace - hex value or namespace name
+   * @returns formatted balance transfer receipt list
+   */
+  static getNamespaceBalanceTransferReceipt = async (pageInfo, hexOrNamespace) => {
+  	const namespaceId = await helper.hexOrNamespaceToId(hexOrNamespace, 'namespace');
+
+  	const { ownerAddress, startHeight } = await this.getNamespace(namespaceId);
+
+  	const { pageNumber, pageSize } = pageInfo;
+
+  	const searchCriteria = {
+  		pageNumber,
+  		pageSize,
+  		order: Order.Desc,
+  		height: UInt64.fromUint(startHeight),
+  		receiptTypes: [ReceiptType.Namespace_Rental_Fee],
+  		senderAddress: Address.createFromRawAddress(ownerAddress)
+  	};
+
+  	const balanceTransferReceipt = await ReceiptService.searchReceipts(searchCriteria);
+
+  	const formattedReceipt = await ReceiptService.createReceiptTransactionStatement(balanceTransferReceipt.data.balanceTransferStatement);
+
+  	return {
+  		...balanceTransferReceipt,
+  		data: formattedReceipt.filter(receipt =>
+  			receipt.senderAddress === ownerAddress &&
+		  receipt.type === ReceiptType.Namespace_Rental_Fee)
+  	};
+  }
+
+  /**
+   * Gets namespace artifact expiry receipt list dataset into Vue component
+   * @param pageInfo - object for page info such as pageNumber, pageSize
+   * @param hexOrNamespace - hex value or namespace name
+   * @returns formatted artifact expiry receipt list
+   */
+  static getNamespaceArtifactExpiryReceipt = async (pageInfo, hexOrNamespace) => {
+  	const namespaceId = await helper.hexOrNamespaceToId(hexOrNamespace, 'namespace');
+
+  	const { endHeight } = await this.getNamespace(namespaceId);
+
+  	const { pageNumber, pageSize } = pageInfo;
+
+	  // Todo: Should filter with with ArtifactId rather than height.
+	  // Bug: https://github.com/nemtech/catapult-rest/issues/517
+  	const searchCriteria = {
+  		pageNumber,
+  		pageSize,
+  		order: Order.Desc,
+  		height: UInt64.fromUint(endHeight),
+  		receiptTypes: [ReceiptType.Namespace_Expired, ReceiptType.Namespace_Deleted]
+  	};
+
+  	const artifactExpiryReceipt = await ReceiptService.searchReceipts(searchCriteria);
+  	const formattedReceipt = await ReceiptService.createReceiptTransactionStatement(artifactExpiryReceipt.data.artifactExpiryStatement);
+
+  	return {
+  		...artifactExpiryReceipt,
+  		data: formattedReceipt.filter(receipt => receipt.type === ReceiptType.Namespace_Expired || receipt.type === ReceiptType.Namespace_Deleted)
+  	};
   }
 
   /**
@@ -264,7 +334,8 @@ class NamespaceService {
   		group: TransactionGroup.Confirmed
   	};
 
-  	const searchNamespaces = await TransactionService.streamerTransactions(searchCriteria);
+  	const streamerTransactions = await TransactionService.streamerTransactions(searchCriteria);
+  	const searchNamespaces = streamerTransactions.map(transaction => TransactionService.formatTransaction(transaction));
 
   	const namespaceids = searchNamespaces.map(namespace => namespace.namespaceId);
 
@@ -335,7 +406,7 @@ class NamespaceService {
   		: Number(namespace.endHeight.toString()),
   	active: namespace.active ? Constants.Message.ACTIVE : Constants.Message.INACTIVE,
   	...this.formatAlias(namespace.alias),
-  	parentName: namespace.registrationType !== 0 ? namespace.name.split('.')[0].toUpperCase() : '',
+  	parentName: namespace.registrationType !== 0 ? namespace.name.split('.')[0] : '',
   	levels: namespace.levels
   })
 

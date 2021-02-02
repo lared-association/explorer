@@ -3,6 +3,74 @@ All notable changes to this project will be documented in this file.
 
 The changelog format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [v0.8.0][v0.8.0] - 16-Jan-2021
+
+### Milestone: [catapult-server@v0.10.0.5][catapult-server@v0.10.0.5]
+
+Package  | Version  | Link
+---|---|---
+REST Core| v2.3.0 | [catapult-rest][catapult-rest@v2.3.0]
+SDK Core| v0.23.0 | [symbol-sdk][symbol-sdk@v0.23.0]
+
+### Added
+- Added compatibility for 0.10.0.5 server.
+- Update SDK. [#753](https://github.com/nemgrouplimited/symbol-explorer/issues/753)
+
+### Fixed
+- Removed NEM Foundation in Explorer [#748](https://github.com/nemgrouplimited/symbol-explorer/issues/748)
+- Do not expose whole ENV in /config [#754](https://github.com/nemgrouplimited/symbol-explorer/issues/754)
+- Minor bug in explorer
+
+## [v0.7.1][v0.7.1] - 19-Dec-2020
+
+### Milestone: [catapult-server@v0.10.0.4](https://github.com/nemtech/catapult-server/releases/tag/v0.10.0.4)
+
+Package  | Version  | Link
+---|---|---
+REST Core| v2.2.0 | [catapult-rest](https://github.com/nemtech/catapult-rest/releases/tag/v2.2.0)
+SDK Core| v0.22.2 | [symbol-sdk](https://www.npmjs.com/package/symbol-sdk)
+
+### Added
+- Added server. Read config from environment variables [#728](https://github.com/nemgrouplimited/symbol-explorer/issues/728)
+
+### Fixed
+- Add important block info in block detail. [#736](https://github.com/nemgrouplimited/symbol-explorer/issues/736)
+- States my balance as 500,000 XYM. It isn't. [#742](https://github.com/nemgrouplimited/symbol-explorer/issues/742)
+- Every harvest fee are same price in one block. [#743](https://github.com/nemgrouplimited/symbol-explorer/issues/743)
+- Account Details. The loading never ends with invalid param. [#731](https://github.com/nemgrouplimited/symbol-explorer/issues/731)
+- Misspelling at Transaction Detail. [#745](https://github.com/nemgrouplimited/symbol-explorer/issues/745)
+- Account details. Fetch info by alias. [#730](https://github.com/nemgrouplimited/symbol-explorer/issues/730)
+
+## [v0.7.0][v0.7.0] - 9-Dec-2020
+
+### Milestone: [catapult-server@v0.10.0.4](https://github.com/nemtech/catapult-server/releases/tag/v0.10.0.4)
+
+Package  | Version  | Link
+---|---|---
+REST Core| v2.2.0 | [catapult-rest](https://github.com/nemtech/catapult-rest/releases/tag/v2.2.0)
+SDK Core| v0.22.2 | [symbol-sdk](https://www.npmjs.com/package/symbol-sdk)
+
+### Added
+- Added compatibility for 0.10.0.4 server.
+- Add extra graph info into transaction list [#709](https://github.com/nemgrouplimited/symbol-explorer/pull/709)
+- Display node type on base info widget (Voting node / non voting node) [#723](https://github.com/nemgrouplimited/symbol-explorer/pull/723)
+- View receipt info in detail page such as Account, Block, Mosaic and Namespace [#716](https://github.com/nemgrouplimited/symbol-explorer/pull/716)
+- Display more than 1 alias name in listing or detail page. [#716](https://github.com/nemgrouplimited/symbol-explorer/pull/717)
+- New message component [#724](https://github.com/nemgrouplimited/symbol-explorer/pull/724)
+
+### Fixed
+- Finalized Blocks are not up to date [#675](https://github.com/nemgrouplimited/symbol-explorer/issues/675)
+- Replace hardcoded XYM text from i18n properties [#684](https://github.com/nemgrouplimited/symbol-explorer/issues/684)
+- Addresses are not displayed correctly [#701](https://github.com/nemgrouplimited/symbol-explorer/issues/701)
+- Transaction Detail. Doesn't display info for some transactions [#703](https://github.com/nemgrouplimited/symbol-explorer/issues/703)
+- Display all transactions at one page for an account [#704](https://github.com/nemgrouplimited/symbol-explorer/issues/704)
+- Namespace Detail. Handle expired namespace. [#705](https://github.com/nemgrouplimited/symbol-explorer/issues/705)
+- TG. Aggrate Bonded icon missing. [#706](https://github.com/nemgrouplimited/symbol-explorer/issues/706)
+- Only one account alias is presented. [#714](https://github.com/nemgrouplimited/symbol-explorer/issues/714)
+- Minor change for CR. [#718](https://github.com/nemgrouplimited/symbol-explorer/issues/718)
+- Account Detail. metadata is missing. [#725](https://github.com/nemgrouplimited/symbol-explorer/issues/725)
+
+
 ## [v0.6.2][v0.6.2] - 19-Oct-2020
 
 ### Milestone: [catapult-server@v0.10.0.3](https://github.com/nemtech/catapult-server/releases/tag/v0.10.0.3)
@@ -26,7 +94,7 @@ SDK Core| v0.21.0 | [symbol-sdk](https://www.npmjs.com/package/symbol-sdk)
 - Namespaces List. Showing wrong Expiration and Expiration Date [#644](https://github.com/nemgrouplimited/symbol-explorer/issues/644)
 - Problem with presenting address without outgoing transactions. [#663](https://github.com/nemgrouplimited/symbol-explorer/issues/663)
 - Problem with displaying account detail. [#638](https://github.com/nemgrouplimited/symbol-explorer/issues/638)
-- Page Assembler 'adaptive' card layout. 
+- Page Assembler 'adaptive' card layout.
 - Fixes wrong display expiration date in the namespace list on the private network. [#686](https://github.com/nemgrouplimited/symbol-explorer/pull/686)
 
 ## [v0.6.1][v0.6.1] - 2-Oct-2020
@@ -175,3 +243,10 @@ SDK Core| v0.20.7 | [symbol-sdk](https://www.npmjs.com/package/symbol-sdk)
 [v0.6.0]: https://github.com/nemfoundation/symbol-explorer/releases/tag/v0.6.0
 [v0.6.1]: https://github.com/nemfoundation/symbol-explorer/releases/tag/v0.6.1
 [v0.6.2]: https://github.com/nemfoundation/symbol-explorer/releases/tag/v0.6.2
+[v0.7.0]: https://github.com/nemfoundation/symbol-explorer/releases/tag/v0.7.0
+[v0.7.1]: https://github.com/nemfoundation/symbol-explorer/releases/tag/v0.7.1
+[v0.8.0]: https://github.com/nemfoundation/symbol-explorer/releases/tag/v0.8.0
+
+[catapult-server@v0.10.0.5]: https://github.com/nemtech/catapult-server/releases/tag/v0.10.0.5
+[symbol-sdk@v0.23.0]: https://www.npmjs.com/package/symbol-sdk/v/0.23.0
+[catapult-rest@v2.3.0]: https://github.com/nemtech/catapult-rest/releases/tag/v2.3.0

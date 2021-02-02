@@ -1,23 +1,23 @@
 {
-    "nodeUrl": "http://20.52.146.76:3000",
+    "nodeUrl": "http://api-01.us-west-1.096x.symboldev.network:3000",
     "marketDataUrl": "https://min-api.cryptocompare.com/",
     "pagination": {
         "pageSize": 25
     },
     "testAccount": {
-        "address": "TBTXB6AKHT3S3O6SPDNL3VXI6XJVNXOJZGP2SAQ"
+        "address": "TDS44G6KUHO7MODUB6E6WVJOK277QY65XCBJX5Y"
     },
     "testMosaic": {
-        "mosaicId": "4131C5FD69F7A75C"
+        "mosaicId": "5E62990DCAC5BE8A"
     },
     "testNamespace": {
-        "rootNamespace": "lared",
-        "subNamespace": "lared.moneda"
+        "rootNamespace": "symbol",
+        "subNamespace": "symbol.xym"
     },
     "testBlock": {
         "height": 1
     },
     "testTransactions":{
-        "transferTransactionHash": "DBBCD72693BEFABECA2EA18AE1469E520FE9C95262E33213A77D36F925FB3962"
+        "transferTransactionHash": "38E7FF47113FAD41C019EF928168CCBF2707D5B894F8F588AAAE0C5A7AC369F5"
     }
 }

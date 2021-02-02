@@ -15,7 +15,9 @@ import {
 	MosaicRestrictionFlag,
 	OperationRestrictionFlag,
 	MosaicRestrictionEntryType,
-	MosaicRestrictionType
+	MosaicRestrictionType,
+	LockStatus,
+	BlockType
 } from 'symbol-sdk';
 
 class Constants {
@@ -25,12 +27,13 @@ class Constants {
   	UNLIMITED: 'UNLIMITED',
   	UNAVAILABLE: 'N/A',
   	INFINITY: 'INFINITY',
-  	MOSAIC: 'TOKEN', // Check this if any text related to tokens broken.
+  	MOSAIC: 'TOKEN',
   	ADDRESS: 'ADDRESS',
   	NO_ALIAS: 'NO ALIAS',
   	ACTIVE: 'ACTIVE',
   	INACTIVE: 'INACTIVE',
-  	UNKNOWN: 'UNKNOWN'
+  	UNKNOWN: 'UNKNOWN',
+  	EXPIRED: 'EXPIRED'
   }
 
   static TransactionType = {
@@ -169,16 +172,34 @@ class Constants {
   }
 
   static MosaicRestrictionType = {
-  	[MosaicRestrictionType.EQ]: 'tokenRestrictionType.EQ',
-  	[MosaicRestrictionType.GE]: 'tokenRestrictionType.GE',
-  	[MosaicRestrictionType.GT]: 'tokenRestrictionType.GT',
-  	[MosaicRestrictionType.LE]: 'tokenRestrictionType.LE',
-  	[MosaicRestrictionType.LT]: 'tokenRestrictionType.LT',
-  	[MosaicRestrictionType.NE]: 'tokenRestrictionType.NE',
-  	[MosaicRestrictionType.NONE]: 'tokenRestrictionType.NONE'
+  	[MosaicRestrictionType.EQ]: 'mosaicRestrictionType.EQ',
+  	[MosaicRestrictionType.GE]: 'mosaicRestrictionType.GE',
+  	[MosaicRestrictionType.GT]: 'mosaicRestrictionType.GT',
+  	[MosaicRestrictionType.LE]: 'mosaicRestrictionType.LE',
+  	[MosaicRestrictionType.LT]: 'mosaicRestrictionType.LT',
+  	[MosaicRestrictionType.NE]: 'mosaicRestrictionType.NE',
+  	[MosaicRestrictionType.NONE]: 'mosaicRestrictionType.NONE'
   }
 
-  static MerkleRootsOrder = ['AccountState', 'Namespace', 'Token', 'Multisig', 'HashLockInfo', 'SecretLockInfo', 'AccountRestriction', 'TokenRestriction', 'Metadata']
+  static MerkleRootsOrder = ['AccountState', 'Namespace', 'Mosaic', 'Multisig', 'HashLockInfo', 'SecretLockInfo', 'AccountRestriction', 'MosaicRestriction', 'Metadata']
+
+  static ReceiptTransactionStatamentType = {
+	  BalanceChangeReceipt: 'Balance Change Receipt',
+	  BalanceTransferReceipt: 'Balance Transfer Receipt',
+	  InflationReceipt: 'Inflation Receipt',
+	  ArtifactExpiryReceipt: 'Artifact Expiry Receipt'
+  }
+
+  static LockStatusType = {
+	  [LockStatus.UNUSED]: 'Unused',
+	  [LockStatus.USED]: 'Used'
+  }
+
+  static BlockType = {
+	  [BlockType.ImportanceBlock]: 'Delegated Proof of Stake Block',
+	  [BlockType.NemesisBlock]: 'Nemesis Block',
+	  [BlockType.NormalBlock]: 'Normal Block'
+  }
 }
 
 export default Constants;

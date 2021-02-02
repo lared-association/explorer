@@ -21,6 +21,7 @@ import Constants from '../config/constants';
 import * as symbol from 'symbol-sdk';
 import Axios from 'axios';
 import moment from 'moment';
+import globalConfig from '../config/globalConfig';
 
 class NodeService {
     /**
@@ -37,7 +38,7 @@ class NodeService {
      * Get Node Info from symbol SDK
      * @returns NodeInfo
      */
-    static getNodeInfo = () => {
+    static getCurrentNodeInfo = () => {
     	return http.createRepositoryFactory.createNodeRepository()
     		.getNodeInfo()
     		.toPromise();
@@ -59,7 +60,10 @@ class NodeService {
     	let nodePeers = [];
 
     	try {
-    		nodePeers = (await Axios.get(globalConfig.endpoints.statisticsService + '/nodes')).data;
+    		if (globalConfig.endpoints.statisticsService && globalConfig.endpoints.statisticsService.length)
+    			nodePeers = (await Axios.get(globalConfig.endpoints.statisticsService + '/nodes')).data;
+    		else
+    			throw Error('Statistics service endpoint is not provided');
     	}
     	catch (e) {
     		nodePeers = await http.createRepositoryFactory.createNodeRepository()
@@ -108,7 +112,7 @@ class NodeService {
             nodeInfo.roles === 3 ||
             nodeInfo.roles === 6 ||
             nodeInfo.roles === 7
-            	? 'http://' + nodeInfo.host + ':' + 3000
+            	? 'http://' + nodeInfo.host + ':' + (globalConfig.apiNodePort || 3000)
             	: Constants.Message.UNAVAILABLE
     })
 
@@ -134,7 +138,10 @@ class NodeService {
     	let node = {};
 
     	try {
-    		node = (await Axios.get(globalConfig.endpoints.statisticsService + '/nodes/' + publicKey)).data;
+    		if (globalConfig.endpoints.statisticsService && globalConfig.endpoints.statisticsService.length)
+    			node = (await Axios.get(globalConfig.endpoints.statisticsService + '/nodes/' + publicKey)).data;
+    		else
+    			throw Error('Statistics service endpoint is not provided');
     	}
     	catch (e) {
     		const nodes = (await Axios.get(http.nodeUrl + '/node/peers')).data;
