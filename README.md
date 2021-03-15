@@ -22,7 +22,7 @@ The explorer supports searching for transactions, accounts, namespaces, tokens, 
 ***
 ## Requirements
 
-**Node.js 8, 9 or 10** is required to run LaRed Wallet as a web application.
+**Node.js 8, 9 or 10** is required to run LaRed Explorer as a web application.
 It is recommended to install **npm**, the Node.js package manager. This can be done by executing the following command:
 
    ```
