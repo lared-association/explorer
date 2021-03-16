@@ -79,7 +79,7 @@ npm run dev
 * Removed some irrelevant UI elements for less intrusive appearance.
 ***
 ## Known issues
-* No major known issues so far.
+* Using the Grammarly extension for Google Chrome may cause unexpected behavior when double clicking certain UI elements (hyperlink items may become centered throughout the website).
 ***
 ## Developer notes
 
