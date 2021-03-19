@@ -122,7 +122,7 @@ export default {
 		},
 
 		nativeMosaicAliasName() {
-			return http.networkCurrency.namespace.namespaceName;
+			return http.networkCurrency.namespaceName;
 		},
 
 		_x() {
@@ -212,9 +212,7 @@ export default {
 		},
 
 		getMosaicName(mosaic) {
-			return mosaic.mosaicAliasName !== 'N/A'
-				? mosaic.mosaicAliasName
-				: mosaic.mosaicId;
+			return helper.getMosaicName(mosaic);
 		},
 
 		getMosaicTitle(mosaic) {

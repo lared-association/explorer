@@ -40,7 +40,7 @@
 										{{getNameByKey('block')}}: {{ item.height }}
 									</div>
 									<div class="ex-long-text ex-text" :title="'Type: ' + item.type" style="margin-left: 20px">
-										{{ item.type }}
+										<TransactionType :value="item.type" size="small" />
 									</div>
 								</div>
 								<div class="ex-row no-wrap">
@@ -67,12 +67,14 @@
 <script>
 import Card from '@/components/containers/Card.vue';
 import ButtonMore from '@/components/controls/ButtonMore.vue';
+import TransactionType from '@/components/fields/TransactionType.vue';
 import { mapGetters } from 'vuex';
 
 export default {
 	components: {
 		Card,
-		ButtonMore
+		ButtonMore,
+		TransactionType
 	},
 
 	computed: {
@@ -102,7 +104,7 @@ export default {
     padding: 0;
     left: 0;
     top: 0;
-    background: #9a0f0f;
+    background: #851414;
     border-top-left-radius: 3px;
     border-bottom-left-radius: 3px;
   }
@@ -134,7 +136,7 @@ export default {
             .ex-account-text {
                 color: #84accb;
                 font-weight: 600;
-                font-size: 12px;
+                font-size: 10px;
                 margin-left: 20px;
             }
         }

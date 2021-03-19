@@ -35,8 +35,8 @@ export default {
 				'namespace',
 				'namespaceName',
 				'linkedNamespace',
-				'mosaicAliasName',
-				'accountAliasName',
+				'mosaicAliasNames_',
+				'accountAliasNames_',
 				'aliasAddress',
 				'aliasMosaic',
 				'transaction',
@@ -55,7 +55,7 @@ export default {
 
 				'signer',
 				'recipient',
-				'owneraddress',
+				'ownerAddress',
 				'blockHeight',
 				'endHeight',
 				'startHeight',
@@ -65,6 +65,7 @@ export default {
 				'sourceAddress',
 				'targetAddress',
 				'targetMosaicId',
+				'targetMosaicAliasNames_',
 				'targetNamespaceId',
 				'unresolved',
 				'addressResolutionEntries_',
@@ -72,15 +73,18 @@ export default {
 				'restrictionMosaicValues_',
 				'restrictionAddressValues_',
 				'referenceMosaicId',
-				'restrictionAddressAdditions',
-				'restrictionAddressDeletions',
-				'restrictionMosaicAdditions',
-				'restrictionMosaicDeletions',
+				'restrictionAddressAdditions_',
+				'restrictionAddressDeletions_',
+				'restrictionMosaicAdditions_',
+				'restrictionMosaicDeletions_',
 				'addressAdditions_',
 				'addressDeletions_',
 				'linkedAccountAddress',
 				'ownerAddress',
+				'senderAddress',
 
+				'namespaceArtifactId',
+				'mosaicArtifactId',
 				'nodePublicKey'
 			],
 			disableClickValues: [...Object.values(Constants.Message)],
@@ -110,7 +114,10 @@ export default {
 				'voting',
 				'addressResolutionEntries',
 				'mosaicResolutionEntries',
-				'stateHashSubCacheMerkleRoots'
+				'stateHashSubCacheMerkleRoots',
+				'accountAliasNames',
+				'mosaicAliasNames',
+				'targetMosaicAliasNames'
 			],
 			valuesToTranslate: [
 				'newRestrictionType',
@@ -161,7 +168,7 @@ export default {
 		},
 
 		isBlockHeightWithFinalizedStatus(itemKey) {
-			return itemKey === 'height' || itemKey === 'blockHeight' || itemKey === 'startHeight';
+			return itemKey === 'height' || itemKey === 'blockHeight' || itemKey === 'startHeight' || itemKey === 'endHeight';
 		},
 
 		isArrayField(itemKey) {
@@ -173,9 +180,12 @@ export default {
 				key === 'harvester' ||
                 key === 'address' ||
                 key === 'signer' ||
-                key === 'recipient' ||
+				key === 'recipient' ||
+				key === 'publicKey' ||
+				key === 'nodePublicKey' ||
+				key === 'mainPublicKey' ||
                 key === 'transactionHash' ||
-                key === 'owneraddress' ||
+                key === 'ownerAddress' ||
                 key === 'host' ||
                 key === 'friendlyName' ||
                 key === 'multisigAddresses_' ||
@@ -183,6 +193,19 @@ export default {
 				key === 'addressAdditions_' ||
 				key === 'addressDeletions_'
 			);
+		},
+
+		isWordBreakable(key) {
+			return this.isTruncate(key) ||
+				(typeof key === 'string'
+					? (
+						key.toLowerCase().includes('key') ||
+						key.toLowerCase().includes('hash') ||
+						key.toLowerCase().includes('id') ||
+						key.toLowerCase().includes('hex')
+					)
+					: false
+				);
 		},
 
 		isBoolean(key) {
@@ -308,7 +331,7 @@ export default {
         font-weight: none;
         padding: 10px 5px;
         min-height: 50px;
-        word-break: break-all;
+        word-break: normal;
         min-width: 50px;
         max-width: 300px;
     }
@@ -336,6 +359,10 @@ export default {
 
     .table-titles {
         background-color: rgba(52, 40, 104, 0.05);
+    }
+
+    .break-all {
+        word-break: break-all;
     }
 }
 </style>

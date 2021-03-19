@@ -37,7 +37,7 @@
 							<template #body>
 								<div class="ex-row">
 									<div class="ex-text">
-										{{ item.numTransactions }} {{getNameByKey('transactions')}}
+										{{ getNameByKey('created') }}
 									</div>
 									<div class="ex-text">
 										<Age :date="item.date"/>
@@ -136,7 +136,7 @@ export default {
             .ex-account-text {
                 color: #84accb;
                 font-weight: 600;
-                font-size: 12px;
+                font-size: 10px;
                 margin-left: 20px;
             }
         }

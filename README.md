@@ -1,10 +1,10 @@
 
 ![](https://i.imgur.com/r8mM1TN.gif)
-# LaRed Explorer
+# LaRed Explorer v1.0.0
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-* 
-LaRed Explorer is a read-only web application to browse the content of the blockchain.
+
+LaRed Explorer is a read-only web application to browse the content of the blockchain. 
 The explorer supports searching for transactions, accounts, namespaces, tokens, and blocks information on a given network.
 ***
 ## Features
@@ -22,7 +22,7 @@ The explorer supports searching for transactions, accounts, namespaces, tokens, 
 ***
 ## Requirements
 
-**Node.js 8, 9 or 10** is required to run LaRed Wallet as a web application.
+**Node.js 8, 9 or 10** is required to run LaRed Explorer as a web application.
 It is recommended to install **npm**, the Node.js package manager. This can be done by executing the following command:
 
    ```
@@ -79,7 +79,7 @@ npm run dev
 * Removed some irrelevant UI elements for less intrusive appearance.
 ***
 ## Known issues
-* No major known issues so far.
+* Using the Grammarly extension for Google Chrome may cause unexpected behavior when double clicking certain UI elements (hyperlink items may become centered throughout the website).
 ***
 ## Developer notes
 
@@ -98,11 +98,3 @@ The file `/src/config/setup.json.mt` contains the node list shown in the node se
 2. Set `peersApi.defaultNode` property to the default node url.
 
 ***
-## License
-
-Copyright 2019-present NEM
-
-Licensed under the [Apache License 2.0](LICENSE)
-
-[self]: https://github.com/superhow/lared-explorer
-[docs]: https://nemtech.github.io
