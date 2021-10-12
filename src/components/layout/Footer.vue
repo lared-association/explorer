@@ -79,16 +79,16 @@ export default {
 
   .footer {
     background-image: url(../../styles/img/symbol_connector_crop2.jpg);
-    padding: 50px 0 0;
+    padding: 10px 0 0;
     width: 100%;
     position: relative;
     .footer-row {
-        padding-top: 40px;
+        padding-top: 10px;
         // width: 100%;
         // max-width: 1920px;
 
         .footer-description {
-            margin-top: -40px;
+            margin-top: -10px;
         }
     }
 }
@@ -100,7 +100,7 @@ export default {
     bottom: 0;
     right: 0;
     width: 100%;
-    height: 100%;
+    height: 20%;
     background-repeat: no-repeat;
     background-size: auto 130%;
     background-position-x: left;

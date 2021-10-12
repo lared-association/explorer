@@ -8,7 +8,7 @@
 	"props": {
 		"layout": "flex",
 		"storeNamespaces": [],
-		"initActions": [ "node/fetchNodeInfo" ],
+		"initActions": ["node/fetchNodeInfo"],
 		"schema": [
 			{
 				"layoutOptions": "full-width",
@@ -33,17 +33,6 @@
 			},
 			{
 				"layoutOptions": "adaptive",
-				"type": "CardTable",
-				"title": "nodePeerStatusTitle",
-				"managerGetter": "node/info",
-				"dataGetter": "node/peerStatus",
-				"errorMessage": "nodeDetailError",
-				"pagination": "none",
-				"hideEmptyData": true
-			},
-			{
-				"layoutOptions": "adaptive",
-				"type": "NodeRewardsClient",
 				"managerGetter": "node/nodeRewards",
 				"payoutsManagerGetter": "node/payouts"
 			},

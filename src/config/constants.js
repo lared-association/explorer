@@ -27,7 +27,7 @@ class Constants {
 		UNLIMITED: 'UNLIMITED',
 		UNAVAILABLE: 'N/A',
 		INFINITY: 'INFINITY',
-		MOSAIC: 'TOKEN',
+    MOSAIC: 'TOKEN',
 		ADDRESS: 'ADDRESS',
 		NO_ALIAS: 'NO ALIAS',
 		ACTIVE: 'ACTIVE',
@@ -111,7 +111,7 @@ class Constants {
 	}
 
 	static ReceiptType = {
-		[ReceiptType.Harvest_Fee]: 'Staking Fee',
+    [ReceiptType.Harvest_Fee]: 'Staking Fee',
 		[ReceiptType.LockHash_Created]: 'LockHash Created',
 		[ReceiptType.LockHash_Completed]: 'LockHash Completed',
 		[ReceiptType.LockHash_Expired]: 'LockHash Expired',
