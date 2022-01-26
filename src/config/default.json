@@ -1,23 +1,24 @@
 {
 	"peersApi": {
-		"defaultNode": "http://20.52.130.150:3000",
+		"defaultNode": "http://testnet-dual-1.lared.superhow.net:3000",
 		"nodes": [
-			"http://20.52.130.150:3000",
-			"http://20.52.134.220:3000"
+			"http://testnet-dual-1.lared.superhow.net:3000",
+			"http://testnet-peer-1.lared.superhow.net:3000",
+			"http://testnet-peer-2.lared.superhow.net:3000"
 		]
 	},
 	"apiNodePort": 3000,
 	"endpoints": {
 		"marketData": "https://min-api.cryptocompare.com/",
-		"statisticsService": "http://localhost:4001",
+		"statisticsService": "http://stats-testnet.lared.superhow.net",
 		"nodeRewardsController": "http://34.252.126.146:7890"
 	},
 	"networkConfig": {
-		"namespaceName": "lared.moneda",
-		"mosaicId": "451AFC47F3BED2A1",
+		"namespaceName": "lrd",
+		"mosaicId": "0C2C615DFCF5B925",
 		"namespaceId": "",
 		"divisibility": "6",
-		"networkIdentifier": 0
+		"networkIdentifier": 152
 	},
 	"footer": {
 		"link": []

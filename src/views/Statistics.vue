@@ -19,27 +19,28 @@
 <template>
 	<b-container fluid class="px-0 py-0">
 		<b-row class="my-4 mx-0 mx-xs-0 mx-md-4 mx-lg-8">
-			<b-col xs="12" md="12" lg="9" style="display: flex">
-				<ChartBlockTimeDifference style="width: 100%" />
+			<b-col xs="12" md="12" lg="9" style="display: flex;">
+				<ChartBlockTimeDifference style="width: 100%;" />
 			</b-col>
-			<b-col xs="12" md="12" lg="3" style="display: flex">
-				<NetworkFeesWidget style="width: 100%" />
-			</b-col>
-
-			<b-col xs="12" md="12" lg="9" style="display: flex">
-				<ChartTransactionPerBlock style="width: 100%" />
-			</b-col>
-			<b-col xs="12" md="12" lg="3" style="display: flex">
-				<NetworkRentalFeesWidget style="width: 100%" />
+			<b-col xs="12" md="12" lg="3" style="display: flex;">
+				<NetworkFeesWidget style="width: 100%;" />
 			</b-col>
 
-			<b-col xs="12" md="6" style="display: flex">
-				<NodeHeightStatsWidget style="width: 100%" type="height" />
+			<b-col xs="12" md="12" lg="9" style="display: flex;">
+				<ChartTransactionPerBlock style="width: 100%;" />
 			</b-col>
-			<b-col xs="12" md="6" style="display: flex">
-				<NodeHeightStatsWidget style="width: 100%" type="finalizedHeight" />
+			<b-col xs="12" md="12" lg="3" style="display: flex;">
+				<NetworkRentalFeesWidget style="width: 100%;" />
 			</b-col>
-			<b-col xs="12" md="12" style="display: flex">
+
+			<b-col xs="12" md="6" style="display: flex;">
+				<NodeHeightStatsWidget style="width: 100%;" type="height" />
+			</b-col>
+			<b-col xs="12" md="6" style="display: flex;">
+				<NodeHeightStatsWidget style="width: 100%;" type="finalizedHeight" />
+			</b-col>
+			<b-col xs="12" md="12" style="display: flex;">
+				<ChartNodeCount style="width: 100%;" />
 			</b-col>
 		</b-row>
 	</b-container>
@@ -50,6 +51,7 @@ import NetworkRentalFeesWidget from '@/components/widgets/NetworkRentalFeesWidge
 import ChartBlockTimeDifference from '@/components/widgets/ChartBlockTimeDifference.vue';
 import ChartTransactionPerBlock from '@/components/widgets/ChartTransactionPerBlock.vue';
 import NodeHeightStatsWidget from '@/components/widgets/NodeHeightStatsWidget.vue';
+import ChartNodeCount from '@/components/widgets/ChartNodeCount.vue';
 
 export default {
 	name: 'Statistics',
@@ -58,7 +60,8 @@ export default {
 		NetworkRentalFeesWidget,
 		ChartBlockTimeDifference,
 		ChartTransactionPerBlock,
-		NodeHeightStatsWidget
+		NodeHeightStatsWidget,
+		ChartNodeCount
 	},
 	mounted() {
 		this.$store.dispatch('initialize', this.$route);
